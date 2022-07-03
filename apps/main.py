@@ -12,13 +12,12 @@ spark = SparkSession \
 df = spark \
   .read \
   .format("kafka") \
-  .option("kafka.bootstrap.servers", "localhost:9092") \
+  .option("kafka.bootstrap.servers", "kafka:9092") \
   .option("subscribe", "test-topic") \
   .load()
 
-df.printSchema()
-df.show()
-df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)")
 
 # Convert binary to string
 df_to_string = df.withColumn('value_string', df.value.cast('string'))
+df_to_string.printSchema()
+df_to_string.selectExpr("*").show()

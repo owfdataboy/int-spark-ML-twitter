@@ -25,7 +25,7 @@ import json
 
 topic= 'test-topic'
 file = 'Cron/roam_prescription_based_prediction_test.jsonl'
-bootstrap_server='localhost:9092'
+bootstrap_server='127.0.0.1:9093'
 print('⚠️  No bootstrap server defined, defaulting to {}\n'.format(bootstrap_server))
 
 
@@ -101,7 +101,8 @@ try:
     % (bootstrap_server,md.brokers))
 
     try:
-        Produce()
+        # Produce()
+        Consume()
     except:
         print("❌ (uncaught exception in produce/consume)")
 
