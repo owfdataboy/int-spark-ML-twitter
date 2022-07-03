@@ -51,3 +51,9 @@ dist
 # Project file
 *.sublime-project
 *.sublime-workspace
+
+.DS_Store
+
+env
+
+Cron/FIFA.csv

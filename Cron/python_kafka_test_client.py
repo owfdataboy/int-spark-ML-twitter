@@ -23,9 +23,9 @@ from confluent_kafka import Producer
 import json
 
 
-topic='test-topic'
-file = './roam_prescription_based_prediction_test.jsonl'
-bootstrap_server='34.121.179.78:9092'
+topic= 'test-topic'
+file = 'Cron/roam_prescription_based_prediction_test.jsonl'
+bootstrap_server='localhost:9092'
 print('⚠️  No bootstrap server defined, defaulting to {}\n'.format(bootstrap_server))
 
 
